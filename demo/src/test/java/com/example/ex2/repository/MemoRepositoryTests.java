@@ -4,10 +4,8 @@ import com.example.ex2.entity.Memo;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
+
+import java.util.List;
 
 @SpringBootTest
 public class MemoRepositoryTests {
@@ -92,6 +90,7 @@ public class MemoRepositoryTests {
     }
     */
 
+    /*
     @Test
     public void testSort() {
         Sort sort1 = Sort.by("mno").descending();
@@ -113,5 +112,15 @@ public class MemoRepositoryTests {
         result.get().forEach(memo -> {
             System.out.println(memo);
         });
+    }
+    */
+
+    @Test
+    public void testQueryMethods() {
+        List<Memo> list = memoRepository.findByMnoBetweenOrderByMnoDesc(70L, 80L);
+
+        for (Memo memo : list) {
+            System.out.println(memo);
+        }
     }
 }
