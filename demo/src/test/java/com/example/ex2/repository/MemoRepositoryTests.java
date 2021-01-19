@@ -1,8 +1,12 @@
 package com.example.ex2.repository;
 
+import com.example.ex2.entity.Memo;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 
 @SpringBootTest
 public class MemoRepositoryTests {
@@ -58,11 +62,21 @@ public class MemoRepositoryTests {
     }
      */
 
-    
+    /*
     @Test
     public void testDelete() {
         Long mno = 100L;
 
         memoRepository.deleteById(mno);
+    }
+     */
+
+    @Test
+    public void testPageDefault() {
+        Pageable pageable = PageRequest.of(0,10);
+
+        Page<Memo> result = memoRepository.findAll(pageable);
+
+        System.out.println(result);
     }
 }
