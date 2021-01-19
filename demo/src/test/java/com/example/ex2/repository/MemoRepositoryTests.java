@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import java.util.Optional;
+import javax.transaction.Transactional;
 
 @SpringBootTest
 public class MemoRepositoryTests {
@@ -23,6 +23,7 @@ public class MemoRepositoryTests {
     }
      */
 
+    /*
     @Test
     public void testSelect() {
         Long mno = 100L;
@@ -36,6 +37,18 @@ public class MemoRepositoryTests {
             System.out.println(memo);
         }
     }
+    */
 
+    @Transactional
+    @Test
+    public void testSelect2() {
+        Long mno = 100L;
+
+        Memo memo = memoRepository.getOne(mno);
+
+        System.out.println("================");
+
+        System.out.println(memo);
+    }
 
 }
