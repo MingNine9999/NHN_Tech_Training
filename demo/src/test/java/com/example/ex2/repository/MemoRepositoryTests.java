@@ -103,5 +103,15 @@ public class MemoRepositoryTests {
         result.get().forEach(memo -> {
             System.out.println(memo);
         });
+
+        Sort sort2 = Sort.by("memoText").ascending();
+        Sort sortAll = sort1.and(sort2);
+
+        pageable = PageRequest.of(0, 10, sortAll);
+        result = memoRepository.findAll(pageable);
+
+        result.get().forEach(memo -> {
+            System.out.println(memo);
+        });
     }
 }
