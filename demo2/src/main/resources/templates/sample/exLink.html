@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <u1>
+        <li th:each="dto : ${list}" >
+            <a th:herf="@{/sample/exView{sno}(sno = ${dto.sno})}">[[${dto}]]</a>
+        </li>
+    </u1>
+    <h1>---------------------------------------------------------------------------</h1>
+    <u1>
+        <li th:each="dto : ${list}" >
+            <a th:herf="@{/sample/exView(sno = ${dto.sno})}">[[${dto}]]</a>
+        </li>
+    </u1>
+    <h1>---------------------------------------------------------------------------</h1>
+    <u1>
+        <li th:each="dto : ${list}" >
+            <a th:herf="@{/sample/exView/{sno}(sno = ${dto.sno})}">[[${dto}]]</a>
+        </li>
+    </u1>
+
+</body>
+</html>
