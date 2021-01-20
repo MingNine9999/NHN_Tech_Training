@@ -24,6 +24,8 @@ dependencies {
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+	compile group: 'org.thymeleaf.extras', name: 'thymeleaf-extras-java8time'
 }
 
 test {
