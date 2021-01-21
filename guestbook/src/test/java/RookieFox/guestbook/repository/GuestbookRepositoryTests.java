@@ -81,6 +81,7 @@ public class GuestbookRepositoryTests {
     }
      */
 
+    /*
     @Test
     public void testQuery2() {
 
@@ -105,5 +106,5 @@ public class GuestbookRepositoryTests {
             System.out.println(guestbook);
         });
     }
-
+    */
 }
