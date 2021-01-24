@@ -11,5 +11,5 @@
 
 - guestbook 방명록 만들기
 
-- mreviwe 영화리뷰 만들기
+- mreview 영화리뷰 만들기
 
