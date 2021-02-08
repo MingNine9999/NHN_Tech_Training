@@ -1,2 +1,13 @@
-package com.nhn.rookie8.sample.account;public class MainController {
+package com.nhn.rookie8.sample.account;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+
+@Controller
+public class MainController {
+
+    @GetMapping("/helloworld")
+    public String hello() {
+        return "Hello World!!!!!!!!";
+    }
 }
